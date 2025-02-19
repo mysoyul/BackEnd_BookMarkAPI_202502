@@ -33,11 +33,13 @@ public class BookmarkService {
         int pageNo = page < 1 ? 0 : page - 1;
         Pageable pageable = PageRequest.of(pageNo, 10, Sort.Direction.DESC, "id");
         //Page<Bookmark> => Page<BookmarkDTO>
-        Page<BookmarkDTO> bookmarkPage = repository.findAll(pageable)
-                //map(Function) Function의 추상메서드 R apply(T t)
+//        Page<BookmarkDTO> bookmarkPage = repository.findAll(pageable)
+                //map(Function) Function 의 추상메서드 R apply(T t)
                 //.map(bookmark -> mapper.toDTO(bookmark));
                 //Method Reference
-                .map(mapper::toDTO);
+//                .map(mapper::toDTO);
+        //Custom Query method 호출
+        Page<BookmarkDTO> bookmarkPage = repository.findBookmarks(pageable);
         return new BookmarksDTO(bookmarkPage);
     }
     
