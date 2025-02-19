@@ -17,10 +17,20 @@ import java.util.List;
 public class BookmarkController {
     private final BookmarkService bookmarkService;
 
-    //api/bookmarks?page=2
+    //api/bookmarks?page=2&query=boot
     @GetMapping
     public BookmarksDTO getBookmarks(@RequestParam(name = "page", defaultValue = "1")
-                                           Integer page) {
-        return bookmarkService.getBookmarks(page);
+                                     Integer page,
+                                     @RequestParam(name = "query", defaultValue = "")
+                                     String query) {
+        /*
+            java 11 String 추가된 메서드 
+            isBlank() => isEmpty() + trim() 
+         */
+        //if(query == null || query.trim().isEmpty()) {
+        if(query == null || query.isBlank()) {
+            return bookmarkService.getBookmarks(page);
+        }
+        return bookmarkService.searchBookmarks(query, page);
     }
 }
