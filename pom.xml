@@ -94,11 +94,6 @@
 			<scope>test</scope>
 		</dependency>
 		<!-- Hibernate utility -->
-<!--		<dependency>-->
-<!--			<groupId>io.hypersistence</groupId>-->
-<!--			<artifactId>hypersistence-utils-hibernate-62</artifactId>-->
-<!--			<version>3.7.3</version>-->
-<!--		</dependency>-->
 		<dependency>
 			<groupId>io.hypersistence</groupId>
 			<artifactId>hypersistence-utils-hibernate-63</artifactId>

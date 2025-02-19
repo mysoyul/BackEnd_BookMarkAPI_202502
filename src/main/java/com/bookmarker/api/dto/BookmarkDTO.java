@@ -11,7 +11,10 @@ import java.time.Instant;
 @AllArgsConstructor
 public class BookmarkDTO {
     private Long id;
+
     private String title;
+
     private String url;
+
     private Instant createdAt;
 }
