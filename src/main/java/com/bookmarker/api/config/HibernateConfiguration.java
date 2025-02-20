@@ -11,7 +11,8 @@ public class HibernateConfiguration {
     HibernatePropertiesCustomizer hibernatePropertiesCustomizer() {
         //return props -> props.put("integrator_provider", ClassImportIntegratorProvider.class.getName());
         return props ->
-                props.put("hibernate.integrator_provider", ClassImportIntegratorProvider.class.getName());
+                props.put("hibernate.integrator_provider",
+                        ClassImportIntegratorProvider.class.getName());
     }
 
 
